@@ -1,0 +1,98 @@
+#How to compile the C++ program?
+--------------------------------------------------------------------------
+C++ program.cpp
+or
+g++ program.cpp
+
+Here program indicates the name of the source file.
+Note: C compiler doesnt allow C++ Program to compile.
+C++ Compiler Allows C program to compile, however C++ Follows Strict Type checking.
+--------------------------------------------------------------------------
+#How to get the values from user and print on screen with c++
+---------------------------------------------------------------------------
+#include<iostream>
+
+using namespace std;
+int main()
+{
+	int x;
+	//to print the value on the console
+	cout<<"Enter the value"<<endl;
+	//to get the input from user
+	cin>>x;
+	//to print the value on the console
+	cout<<"value="<<x<<endl;
+}
+
+Here, cin is object of istream class.
+		, cout is object of ostream class.
+		,cerr is object of ostream class.
+		,endl causes the curser to move to new line.
+		,<<  and >> are operators that are overloaded for the object cout and cin respectively
+		 if they are used interchangably it will cause compilation error.
+		However by overloading this operators with own class interchangebility can be achieved.
+
+-----------------------------------------------------------------------------------
+#How to get the values from user and print it in the oct and hex form
+-----------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int x;
+
+	cout<<"Enter the data"<<endl;
+	cin>>x;
+	cout<<"x="<<x<<endl;
+	cout<<"x in octal="<<oct<<x<<endl;
+	cout<<"x in hex="<<hex<<x<<endl;
+}
+--------------------------------------------------------------------------------------
+#What is Scope resolution operator, How do you use it in C++?
+--------------------------------------------------------------------------------------
+Scope resolution operator (::) is an operator which is used to print the gloabl version of identifier data.
+use
+	printf("%d",::x);
+Example:
+	#include<iostream>
+using namespace std;
+
+int x=20;
+int main()
+{
+	int x=10;
+
+	cout<<"x-"<<x<<endl;
+	cout<<"::x-"<<::x<<endl;
+	cout<<"In this example code :: in the double quotes will not have any progaramaticall impact"<<endl;
+	cout<<"its just to indicate where the scope resolution operator has to be used"<<endl;
+}
+--------------------------------------------------------------------------------------
+#Reference variable: its alias name for allready existing memory
+--------------------------------------------------------------------------------------
+int x=10;
+int &r=x;
+
+here if x holds value 10 and if we update r=20 then x also will become 20.
+here no separate memory is created for r but its only alias name that is given for rererence.
+following examples gives use of reference variable:
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	int x=10;
+	int &r=x;
+
+	cout<<"x -"<<x<<"r-"<<r<<endl;
+	cout<<"&x-"<<&x<<"r-"<<&r<<endl;
+	r=20;
+	cout<<"x-"<<x<<"r-"<<r<<endl;
+	cout<<"&x -"<< (int *) &x<<"&r-"<<(int *)&r<<endl;
+	cout<<"This example indicates that no separate memory is allocated for the reference variable"<<endl;
+	cout<<"By updating the value of reference variable we are updating the value of original variable for which reference was created"<<endl;
+
+}
+--------------------------------------------------------------------------------------
