@@ -16,7 +16,7 @@ using namespace std;
 		//infile>>line;
 		//Following code will get the first line of file for reading
 		//getline(infile,line);
-		while(!infile.eof())
+		while(!infile.eof())//if file reaches eof 1 will return
 		{
 			getline(infile,line);
 			cout<<line<<endl;
